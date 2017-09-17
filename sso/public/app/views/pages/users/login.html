@@ -1,0 +1,27 @@
+<div class="page-header"> <h1>User Login</h1></div>
+
+<form ng-submit="doLogin();">
+    <!--Username-->
+    <label>Username :</label>
+    <input class="form-control" type="text" name="username" required
+            placeholder="Please enter your username" ng-model="loginData.username"/>
+    <br>
+    <!--Password-->
+    <label>Password :</label>
+    <input class="form-control" type="password" name="password" required
+            placeholder="Please enter your password" ng-model="loginData.password"/>
+    <br>
+    <div ng-show="client">
+        <button class="btn btn-primary" type="submit">Login</button>&nbsp;
+        <button type="button" class="btn btn-success" ng-click="socialLogin('facebook');">Facebook</button>&nbsp;
+        <button type="button" class="btn btn-warning" ng-click="socialLogin('twitter');">Twitter</button>&nbsp;
+        <button type="button" class="btn btn-danger" ng-click="socialLogin('google');">Google+</button>
+    </div>
+    <div class="alert alert-danger" role="alert" ng-hide="client">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        Client is not valid.
+    </div>
+
+   
+</form>
